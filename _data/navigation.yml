@@ -1,6 +1,8 @@
-- name: Blog
-  link: /blog/
-- name: About
-  link: /about/
-- name: Contact
-  link: /contact/
+- name: Home
+  link: /
+- name: Watch
+  link: /watch/
+- name: Orgs
+  link: /orgs/
+- name: Archive
+  link: /archive/
