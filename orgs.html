@@ -16,12 +16,14 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 <section class="pad">
 	<div class="container">
 		<p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
-		<ul class="staff">
-			{% for person in site.staff_members %}
+		<ul class="orgs">
+			{% for org in site.partner_orgs %}
 				<li>
-					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
-					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>
-					<div class="position">{{ person.position }}</div>
+					<div class="square-image" style="background-image: url({% include relative-src.html src=org.image_path %})"></div>
+					<div class="name"><a target="_blank" href="{{ org.website }}">{{ org.name }}</a></div>
+					<div class="bio">{{ org.bio }}</div>
+					<div class="donate"><a target="_blank" href="{{ org.donate_link }}">Donate</a></div>
+					<div class="social"><a target="_blank" href="{{ org.social_media_link }}">{{ org.social_media_name }}</a></div>
 				</li>
 			{% endfor %}
 		</ul>
