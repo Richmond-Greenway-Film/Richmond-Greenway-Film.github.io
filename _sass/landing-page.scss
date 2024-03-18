@@ -48,11 +48,21 @@
 	.hero-homepage {
 		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/images/title-mobile.png');
 	}
+
+	.award-img {
+		width:30%;
+		height:30%;
+	}
 }
 
 @media only screen and (min-width: 600px) {
 	.hero-homepage {
 		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/images/title.png');
+	}
+
+	.award-img {
+		width:16%;
+		height:16%;
 	}
 }
 
@@ -68,6 +78,7 @@
 	}
 }
 
+
 @media #{$desktop} {
 	.flex {
 		@include flexbox;
@@ -79,6 +90,11 @@
 			flex: 1;
 			padding: 0 20px;
 		}
+	}
+
+	.award-flex {
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.youtube-embed {
