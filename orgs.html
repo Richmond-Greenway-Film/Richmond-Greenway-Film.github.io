@@ -16,7 +16,8 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 <section class="pad">
 	<div class="container">
 		<ul class="orgs">
-			{% for org in site.partner_orgs %}
+			{% assign sorted_orgs = site.partner_orgs | sort: "relative_path" %}
+			{% for org in sorted_orgs %}
 				<li>
 					<div class="square-image" style="background-image: url({% include relative-src.html src=org.image_path %})"></div>
 					<div class="name"><a target="_blank" href="{{ org.website }}">{{ org.name }}</a></div>
