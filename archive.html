@@ -15,14 +15,31 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 
 <section class="pad">
 	<div class="container">
-		<ul class="staff">
-			{% for person in site.staff_members %}
-				<li>
-					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
-					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>
-					<div class="position">{{ person.position }}</div>
-				</li>
-			{% endfor %}
-		</ul>
+		{% for archive in site.archive_items %}
+			{% assign loopindex = forloop.index | modulo: 2 %}
+			{% if loopindex == 1 %}
+			<section class="info">
+				<div class="container flex">
+					<div class="text centered-text">
+						<div class="archive-youtube-embed">
+							<iframe src="{{ archive.youtube_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						</div>
+						<h3>{{ archive.date | date: "%b %e, %Y" }} - {{ archive.interviewee_name }}</h3>
+						<p>{{ archive.affiliated_org }}</p>
+						<p>{{ archive.short_description }}</p>
+					</div>
+			{% else %}
+					<div class="text centered-text">
+						<div class="archive-youtube-embed">
+							<iframe src="{{ archive.youtube_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						</div>
+						<h3>{{ archive.date | date: "%b %e, %Y" }} - {{ archive.interviewee_name }}</h3>
+						<p>{{ archive.affiliated_org }}</p>
+						<p>{{ archive.short_description }}</p>
+					</div>
+				</div>
+			</section>
+			{% endif %}
+		{% endfor %}
 	</div>
 </section>

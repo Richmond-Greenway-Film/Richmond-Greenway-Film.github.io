@@ -90,6 +90,10 @@
 			flex: 1;
 			padding: 0 20px;
 		}
+
+		.centered-text {
+			text-align:center;
+		}
 	}
 
 	.award-flex {
@@ -112,6 +116,23 @@
 			
 		}
 	}
+
+	.archive-youtube-embed {
+		text-align: center;
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		height: 0;
+
+		iframe {
+			position:absolute;
+			top:0;
+			left:0;
+			height:100%;
+			width: 100%;
+			
+		}
+	}
+
 
 	.content section:nth-child(even) .flex {
 		flex-direction: row-reverse;
