@@ -1,0 +1,16 @@
+.archive-centered-text {
+    text-align:center;
+}
+
+// Mobile screens
+@media only screen and (max-width: 600px) {
+	.archive-centered-text {
+        margin-bottom:50px;
+        padding-bottom:15px !important;
+        border-bottom:1px solid black;
+    }
+
+    .archive-info {
+        padding:0 !important;
+    }
+}
